@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tytronis.AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="header-left">
+        <div class="avatar">
+          <div class="pcb-font">T</div>
+        </div>
+
+        <div>
+          <div class="header-title">Tytronis</div>
+          <div class="header-sub">Intelligence Artificielle</div>
+        </div>
+      </div>
+
+      <div class="header-right">
+
+        <!-- MENU DÉROULANT DES MODES -->
+        <div class="mode-dropdown">
+          <button id="modeSelected" class="mode-selected">Mode : Normal ▼</button>
+
+          <div id="modeMenu" class="mode-menu">
+            <div class="mode-option" data-mode="court">Réponse courte</div>
+            <div class="mode-option" data-mode="normal">Réponse normale</div>
+            <div class="mode-option" data-mode="long">Réponse longue</div>
+          </div>
+        </div>
+
+        <button id="resetChat" class="reset-btn">Réinitialiser</button>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+      </div>
+
+    </header>
+
+    <!-- CHAT -->
+    <main id="chat" class="chat"></main>
+
+    <div id="typing" class="typing"></div>
+
+    <!-- INPUT -->
+    <div class="input-area">
+      <textarea id="input" rows="1" placeholder="Écris ton message..."></textarea>
+      <button id="send">Envoyer</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
