@@ -1,0 +1,244 @@
+/* RESET */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* APP */
+.app {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  max-height: 650px;
+  background: #020617;
+  border-radius: 18px;
+  border: 1px solid #1f2937;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  padding: 12px 18px;
+  border-bottom: 1px solid #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header-sub {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* AVATAR */
+.avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0a0f2d, #020617);
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 12px #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pcb-font {
+  font-size: 34px;
+  color: #3b82f6;
+  text-shadow: 0 0 6px #3b82f6;
+}
+
+/* HEADER RIGHT (ALIGNEMENT COMME COPILOT) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* MENU DÉROULANT DES MODES */
+.mode-dropdown {
+  position: relative;
+}
+
+.mode-selected {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background: #0f172a;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.mode-selected:hover {
+  background: #1e293b;
+}
+
+.mode-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  width: 180px;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.mode-option {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #e5e7eb;
+  transition: 0.2s;
+}
+
+.mode-option:hover {
+  background: #1e293b;
+}
+
+.mode-option.active {
+  background: #3b82f6;
+  color: white;
+}
+
+/* CHAT */
+.chat {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.bubble.user {
+  background: #1d4ed8;
+  color: white;
+  margin-left: auto;
+}
+
+.bubble.ai {
+  background: #020617;
+  border: 1px solid #1f2937;
+  color: #e5e7eb;
+}
+
+/* COPY BUTTON */
+.copy-btn {
+  background: transparent;
+  border: none;
+  color: #60a5fa;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+}
+
+/* TYPING */
+.typing {
+  font-size: 13px;
+  color: #9ca3af;
+  height: 20px;
+  padding-left: 10px;
+}
+
+/* INPUT */
+.input-area {
+  border-top: 1px solid #1f2937;
+  padding: 10px 12px;
+  background: #020617;
+  display: flex;
+  gap: 8px;
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  max-height: 120px;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  padding: 8px 10px;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+button {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #22c55e;
+  color: #064e3b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: #f3f4f6;
+  color: #111;
+}
+
+body.light .app {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+
+body.light .bubble.ai {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #111;
+}
+
+body.light textarea {
+  background: #ffffff;
+  color: #111;
+  border: 1px solid #d1d5db;
+}
