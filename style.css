@@ -252,3 +252,52 @@ body.light textarea {
   color: #111;
   border: 1px solid #d1d5db;
 }
+
+/* --- MODE PLEIN ÉCRAN POUR TOUTES TAILLES --- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh; /* prend toute la hauteur de l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* empêche le scroll global */
+}
+
+.app {
+  height: 100vh; /* l'app prend toute la hauteur */
+  max-height: none; /* supprime la limite de 650px */
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Le chat occupe tout l’espace disponible */
+.chat {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* La zone d’écriture reste collée en bas */
+.input-area {
+  border-top: 1px solid #1f2937;
+  padding: 10px 12px;
+  background: #020617;
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0; /* empêche l'écrasement */
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  max-height: 120px;
+  overflow-y: auto;
+}
