@@ -243,74 +243,51 @@ body.light textarea {
   border: 1px solid #d1d5db;
 }
 
-/* -------------------------------------------------- */
-/* 📱 MODE MOBILE (écrans ≤ 600px) */
-/* -------------------------------------------------- */
-@media (max-width: 600px) {
+/* --- MODE PLEIN ÉCRAN POUR TOUTES TAILLES --- */
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-  }
-
-  #chat {
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-  }
-
-  .bubble {
-    max-width: 85%;
-    font-size: 15px;
-    padding: 10px 14px;
-  }
-
-  #input {
-    width: 100%;
-    font-size: 15px;
-    padding: 12px;
-    border-radius: 10px;
-  }
-
-  #send {
-    padding: 10px 16px;
-    font-size: 15px;
-  }
-
-  .mode-dropdown {
-    transform: scale(0.9);
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* -------------------------------------------------- */
-/* 🖥️ MODE TABLETTE + PC (≥ 601px) */
-/* -------------------------------------------------- */
-@media (min-width: 601px) {
+body {
+  height: 100vh; /* prend toute la hauteur de l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* empêche le scroll global */
+}
 
-  body {
-    font-size: 18px;
-  }
+.app {
+  height: 100vh; /* l'app prend toute la hauteur */
+  max-height: none; /* supprime la limite de 650px */
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+}
 
-  #chat {
-    width: 60%;
-    margin: auto;
-    padding: 30px;
-  }
+/* Le chat occupe tout l’espace disponible */
+.chat {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
 
-  .bubble {
-    max-width: 55%;
-    font-size: 18px;
-    padding: 16px 20px;
-  }
+/* La zone d’écriture reste collée en bas */
+.input-area {
+  border-top: 1px solid #1f2937;
+  padding: 10px 12px;
+  background: #020617;
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0; /* empêche l'écrasement */
+}
 
-  #input {
-    font-size: 18px;
-    padding: 16px;
-  }
-
-  #send {
-    padding: 12px 20px;
-    font-size: 18px;
-  }
+textarea {
+  flex: 1;
+  resize: none;
+  max-height: 120px;
+  overflow-y: auto;
 }
