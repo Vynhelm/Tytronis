@@ -1,25 +1,32 @@
 /* RESET */
 * { box-sizing: border-box; }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+/* BODY PLEIN ÉCRAN */
+body {
   font-family: system-ui, sans-serif;
   background: #020617;
   color: #e5e7eb;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* IMPORTANT : enlève le centrage vertical */
+  overflow: hidden; /* empêche le scroll global */
 }
 
 /* APP */
 .app {
   width: 100%;
   max-width: 900px;
-  height: 100%;
-  max-height: 650px;
+  height: 100vh;      /* prend toute la hauteur */
+  max-height: none;   /* supprime la limite */
   background: #020617;
-  border-radius: 18px;
+  border-radius: 0;   /* plein écran mobile */
   border: 1px solid #1f2937;
   display: flex;
   flex-direction: column;
@@ -70,7 +77,7 @@ body {
   text-shadow: 0 0 6px #3b82f6;
 }
 
-/* HEADER RIGHT (ALIGNEMENT COMME COPILOT) */
+/* HEADER RIGHT */
 .header-right {
   display: flex;
   align-items: center;
@@ -129,7 +136,7 @@ body {
   color: white;
 }
 
-/* CHAT */
+/* CHAT — PREND TOUT L’ESPACE */
 .chat {
   flex: 1;
   padding: 16px;
@@ -139,6 +146,7 @@ body {
   gap: 10px;
 }
 
+/* BULLES */
 .bubble-row {
   display: flex;
   align-items: center;
@@ -189,13 +197,14 @@ body {
   padding-left: 10px;
 }
 
-/* INPUT */
+/* INPUT — FIXÉ EN BAS */
 .input-area {
   border-top: 1px solid #1f2937;
   padding: 10px 12px;
   background: #020617;
   display: flex;
   gap: 8px;
+  flex-shrink: 0; /* empêche l'écrasement */
 }
 
 textarea {
@@ -208,6 +217,7 @@ textarea {
   background: #020617;
   color: #e5e7eb;
   font-size: 14px;
+  overflow-y: auto;
 }
 
 button {
@@ -241,53 +251,4 @@ body.light textarea {
   background: #ffffff;
   color: #111;
   border: 1px solid #d1d5db;
-}
-
-/* --- MODE PLEIN ÉCRAN POUR TOUTES TAILLES --- */
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  height: 100vh; /* prend toute la hauteur de l'écran */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* empêche le scroll global */
-}
-
-.app {
-  height: 100vh; /* l'app prend toute la hauteur */
-  max-height: none; /* supprime la limite de 650px */
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Le chat occupe tout l’espace disponible */
-.chat {
-  flex: 1;
-  overflow-y: auto;
-  padding-bottom: 20px;
-}
-
-/* La zone d’écriture reste collée en bas */
-.input-area {
-  border-top: 1px solid #1f2937;
-  padding: 10px 12px;
-  background: #020617;
-  display: flex;
-  gap: 8px;
-  flex-shrink: 0; /* empêche l'écrasement */
-}
-
-textarea {
-  flex: 1;
-  resize: none;
-  max-height: 120px;
-  overflow-y: auto;
 }
