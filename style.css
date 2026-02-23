@@ -269,13 +269,14 @@ body.light textarea {
     font-size: 13px;
   }
 
+  /* Correction visibilité du T */
   .avatar {
-    width: 48px;
-    height: 48px;
+    width: 54px;
+    height: 54px;
   }
 
   .pcb-font {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .mode-selected {
