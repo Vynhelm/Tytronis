@@ -172,7 +172,7 @@ function typeWriterEffect(text, bubble) {
   type();
 }
 
-/* ---------- ENVOI (VERSION SÉCURISÉE) ---------- */
+/* ---------- ENVOI (APPEL GROQ VIA WORKER) ---------- */
 async function sendMessage() {
   const message = input.value.trim();
   if (!message) return;
