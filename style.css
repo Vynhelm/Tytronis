@@ -303,58 +303,68 @@ textarea {
 }
 
 /* -------------------------------------------------- */
-/* 📱 MODE MOBILE (écrans ≤ 600px) */
+/* 📱 MODE MOBILE — TOUT PLUS GROS (≤ 600px) */
 /* -------------------------------------------------- */
 @media (max-width: 600px) {
 
+  /* HEADER */
   .header {
-    padding: 10px 14px;
+    padding: 16px;
   }
 
   .header-title {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .header-sub {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .avatar {
-    width: 44px;
-    height: 44px;
+    width: 60px;
+    height: 60px;
   }
 
   .pcb-font {
-    font-size: 26px;
-  }
-
-  .chat {
-    padding: 12px;
-    gap: 12px;
-  }
-
-  .bubble {
-    max-width: 85%;
-    font-size: 16px;
-    padding: 12px 16px;
-    border-radius: 18px;
-  }
-
-  textarea {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  #send {
-    padding: 12px 20px;
-    font-size: 16px;
+    font-size: 32px;
   }
 
   .mode-selected {
-    font-size: 14px;
-    padding: 8px 14px;
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  /* CHAT */
+  .chat {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .bubble {
+    max-width: 90%;
+    font-size: 18px;
+    padding: 16px 20px;
+    border-radius: 20px;
+    line-height: 1.5;
+  }
+
+  /* INPUT */
+  textarea {
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  #send {
+    font-size: 18px;
+    padding: 14px 22px;
+  }
+
+  /* TYPING */
+  .typing {
+    font-size: 16px;
   }
 }
+
 
 /* -------------------------------------------------- */
 /* 📲 MODE TABLETTE (601px → 1024px) */
