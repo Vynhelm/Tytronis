@@ -243,8 +243,11 @@ body.light textarea {
   border: 1px solid #d1d5db;
 }
 
-/* ----- MODE MOBILE (téléphones) ----- */
+/* -------------------------------------------------- */
+/* 📱 MODE TÉLÉPHONE (écrans ≤ 600px) */
+/* -------------------------------------------------- */
 @media (max-width: 600px) {
+
   body {
     font-size: 15px;
     padding: 0;
@@ -265,22 +268,29 @@ body.light textarea {
     font-size: 15px;
     padding: 12px;
   }
+
+  .mode-dropdown {
+    transform: scale(0.9);
+  }
 }
 
-/* ----- MODE LARGE (tablettes + PC) ----- */
-@media (min-width: 601px) {
+/* -------------------------------------------------- */
+/* 📲 MODE TABLETTE (601px → 1024px) */
+/* -------------------------------------------------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+
   body {
     font-size: 17px;
   }
 
   #chat {
-    width: 70%;
+    width: 80%;
     margin: auto;
     padding: 20px;
   }
 
   .bubble {
-    max-width: 60%;
+    max-width: 70%;
     font-size: 17px;
     padding: 14px 18px;
   }
@@ -288,5 +298,32 @@ body.light textarea {
   #input {
     font-size: 17px;
     padding: 14px;
+  }
+}
+
+/* -------------------------------------------------- */
+/* 🖥️ MODE PC (≥ 1025px) */
+/* -------------------------------------------------- */
+@media (min-width: 1025px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  #chat {
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+  }
+
+  .bubble {
+    max-width: 55%;
+    font-size: 18px;
+    padding: 16px 20px;
+  }
+
+  #input {
+    font-size: 18px;
+    padding: 16px;
   }
 }
