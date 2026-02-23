@@ -242,3 +242,51 @@ body.light textarea {
   color: #111;
   border: 1px solid #d1d5db;
 }
+
+/* ----- MODE MOBILE (téléphones) ----- */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+    padding: 0;
+  }
+
+  #chat {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .bubble {
+    max-width: 85%;
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  #input {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* ----- MODE LARGE (tablettes + PC) ----- */
+@media (min-width: 601px) {
+  body {
+    font-size: 17px;
+  }
+
+  #chat {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .bubble {
+    max-width: 60%;
+    font-size: 17px;
+    padding: 14px 18px;
+  }
+
+  #input {
+    font-size: 17px;
+    padding: 14px;
+  }
+}
