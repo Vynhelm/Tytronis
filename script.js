@@ -15,7 +15,6 @@ const modeOptions = document.querySelectorAll(".mode-option");
 /* ---------- MÉMOIRE INTELLIGENTE ---------- */
 let memory = {
   name: null,
-  preferredLanguage: null,
   responseStyle: "normal",
   projects: [],
   theme: "dark"
@@ -67,8 +66,7 @@ function detectLanguage(text) {
   if (french.test(text)) return "fr";
   if (spanish.test(text)) return "es";
 
-  // Par défaut → anglais
-  return "en";
+  return "en"; // fallback
 }
 
 /* ---------- MISE À JOUR DE LA MÉMOIRE ---------- */
@@ -85,8 +83,6 @@ function updateMemory(userMessage) {
   if (/projet/i.test(userMessage))
     memory.projects.push(userMessage);
 
-  memory.preferredLanguage = detectLanguage(userMessage);
-
   localStorage.setItem(MEMORY_KEY, JSON.stringify(memory));
   updateModeDropdown();
 }
@@ -99,13 +95,12 @@ function buildSystemMessage() {
 Tu es Tytronis.
 
 Règle de langue :
-- Réponds en français par défaut.
-- MAIS si l'utilisateur écrit dans une autre langue, détecte-la et réponds dans cette langue.
-- Si le message contient plusieurs langues, réponds dans la langue principale du message.
+- Tu détectes la langue du message utilisateur.
+- Tu réponds dans cette langue.
+- Si tu ne détectes rien, réponds en français.
 
 Mémoire :
 Nom : ${memory.name || "inconnu"}
-Langue préférée : ${memory.preferredLanguage || "auto"}
 Style : ${memory.responseStyle}
 Projets : ${memory.projects.join(", ") || "aucun"}
 
@@ -204,7 +199,7 @@ async function sendMessage() {
 
   typingDiv.textContent = "Tytronis écrit...";
 
-  const lang = memory.preferredLanguage || detectLanguage(message);
+  const lang = detectLanguage(message);
 
   try {
     const response = await fetch("https://tytronis.guilhem-bouscary.workers.dev", {
@@ -215,7 +210,7 @@ async function sendMessage() {
       body: JSON.stringify({
         messages: [
           buildSystemMessage(),
-          { role: "system", content: "Langue détectée : " + lang },
+          { role: "system", content: "Réponds dans la langue détectée : " + lang },
           ...history
         ]
       })
@@ -282,7 +277,6 @@ resetBtn.addEventListener("click", () => {
   typingDiv.textContent = "";
   memory = {
     name: null,
-    preferredLanguage: null,
     responseStyle: "normal",
     projects: [],
     theme: "dark"
