@@ -66,6 +66,8 @@ function detectLanguage(text) {
 
   if (french.test(text)) return "fr";
   if (spanish.test(text)) return "es";
+
+  // Par défaut → anglais
   return "en";
 }
 
@@ -94,8 +96,14 @@ function buildSystemMessage() {
   return {
     role: "system",
     content: `
-Tu es Tytronis. Utilise la mémoire suivante :
+Tu es Tytronis.
 
+Règle de langue :
+- Réponds en français par défaut.
+- MAIS si l'utilisateur écrit dans une autre langue, détecte-la et réponds dans cette langue.
+- Si le message contient plusieurs langues, réponds dans la langue principale du message.
+
+Mémoire :
 Nom : ${memory.name || "inconnu"}
 Langue préférée : ${memory.preferredLanguage || "auto"}
 Style : ${memory.responseStyle}
@@ -109,8 +117,7 @@ Styles :
 Règles :
 - N'indique jamais que tu utilises une mémoire.
 - Utilise ces infos naturellement.
-- Si l'utilisateur veut que tu arrêtes d'utiliser son nom, arrêtes d'utiliser son nom.
-- Réponds toujours en frabcais sauf si on te le demande.
+- Si l'utilisateur veut que tu arrêtes d'utiliser son nom, arrête de l'utiliser.
 `
   };
 }
@@ -208,7 +215,7 @@ async function sendMessage() {
       body: JSON.stringify({
         messages: [
           buildSystemMessage(),
-          { role: "system", content: "Réponds en : " + lang },
+          { role: "system", content: "Langue détectée : " + lang },
           ...history
         ]
       })
