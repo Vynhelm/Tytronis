@@ -15,7 +15,7 @@ const modeOptions = document.querySelectorAll(".mode-option");
 /* ---------- MÉMOIRE INTELLIGENTE ---------- */
 let memory = {
   name: null,
-  preferredLanguage: fr,
+  preferredLanguage: null,
   responseStyle: "normal",
   projects: [],
   theme: "dark"
