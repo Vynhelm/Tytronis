@@ -110,6 +110,7 @@ Règles :
 - N'indique jamais que tu utilises une mémoire.
 - Utilise ces infos naturellement.
 - Si l'utilisateur veut que tu arrêtes d'utiliser son nom, arrêtes d'utiliser son nom.
+- Réponds toujours en frabcais sauf si on te le demande.
 `
   };
 }
