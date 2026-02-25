@@ -253,11 +253,13 @@ body.light textarea {
 }
 
 /* -------------------------------------------------- */
-/* 📱 MODE MOBILE PREMIUM */
+/* 📱 MODE MOBILE PREMIUM + SAFE AREA iOS */
 /* -------------------------------------------------- */
 @media (max-width: 600px) {
 
+  /* Décalage automatique sous la zone iOS */
   .header {
+    margin-top: env(safe-area-inset-top, 12px);
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
