@@ -259,7 +259,7 @@ body.light textarea {
 
   /* Décalage automatique sous la zone iOS */
   .header {
-    margin-top: env(safe-area-inset-top, 12px);
+    margin-top: env(safe-area-inset-top, 10px);
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
