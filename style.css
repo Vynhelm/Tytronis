@@ -230,7 +230,7 @@ button {
 }
 
 /* -------------------------------------------------- */
-/* 🌞 MODE CLAIR — BOUTONS BLANCS */
+/* 🌞 MODE CLAIR — BOUTONS + INPUT BLANCS */
 /* -------------------------------------------------- */
 
 body.light {
@@ -247,6 +247,12 @@ body.light .bubble.ai {
   background: #f3f4f6;
   border-color: #d1d5db;
   color: #111;
+}
+
+/* Zone d’écriture */
+body.light .input-area {
+  background: #ffffff;
+  border-top: 1px solid #d1d5db;
 }
 
 body.light textarea {
