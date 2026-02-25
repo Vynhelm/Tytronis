@@ -253,12 +253,45 @@ body.light textarea {
 }
 
 /* -------------------------------------------------- */
-/* 📱 MODE MOBILE ADAPTÉ (Option D + taille 2 + bulles 85%) */
+/* 📱 MODE MOBILE PREMIUM */
 /* -------------------------------------------------- */
 @media (max-width: 600px) {
 
   .header {
-    padding: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 18px;
+  }
+
+  .header-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .mode-selected,
+  .reset-btn,
+  .theme-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pcb-font {
+    font-size: 28px;
   }
 
   .header-title {
@@ -267,21 +300,6 @@ body.light textarea {
 
   .header-sub {
     font-size: 13px;
-  }
-
-  /* Correction visibilité du T */
-  .avatar {
-    width: 54px;
-    height: 54px;
-  }
-
-  .pcb-font {
-    font-size: 32px;
-  }
-
-  .mode-selected {
-    font-size: 14px;
-    padding: 8px 12px;
   }
 
   .chat {
