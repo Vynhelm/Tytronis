@@ -255,7 +255,7 @@ async function sendMessage() {
       chatDiv.appendChild(aiRow);
 
       typeWriterEffect(reply, aiBubble);
-    }, 1500);
+    }, 1000);
 
   } catch (err) {
     typingDiv.textContent = "";
