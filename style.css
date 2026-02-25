@@ -229,7 +229,10 @@ button {
   cursor: pointer;
 }
 
-/* LIGHT MODE */
+/* -------------------------------------------------- */
+/* 🌞 MODE CLAIR — BOUTONS BLANCS */
+/* -------------------------------------------------- */
+
 body.light {
   background: #f3f4f6;
   color: #111;
@@ -250,6 +253,29 @@ body.light textarea {
   background: #ffffff;
   color: #111;
   border: 1px solid #d1d5db;
+}
+
+/* Boutons blancs */
+body.light .mode-selected,
+body.light .reset-btn,
+body.light .theme-btn {
+  background: #ffffff !important;
+  color: #111 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Menu clair */
+body.light .mode-menu {
+  background: #ffffff !important;
+  border-color: #d1d5db !important;
+}
+
+body.light .mode-option {
+  color: #111 !important;
+}
+
+body.light .mode-option:hover {
+  background: #f3f4f6 !important;
 }
 
 /* -------------------------------------------------- */
